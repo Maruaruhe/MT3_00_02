@@ -94,12 +94,12 @@ Matrix4x4 Inverse(const Matrix4x4& m) {
 	return resultInverse;
 }
 
-int InverseNum(const Matrix4x4& m, int a, int b, int c, int d, int e, int f, int g, int h) {
+float InverseNum(const Matrix4x4& m, int a, int b, int c, int d, int e, int f, int g, int h) {
 	float resultNum;
 	resultNum = m.m[a - 1][b - 1] * m.m[c - 1][d - 1] * m.m[e - 1][f - 1] * m.m[g - 1][h - 1];
 	return resultNum;
 }
-int InverseNum2(const Matrix4x4& m, int a, int b, int c, int d, int e, int f) {
+float InverseNum2(const Matrix4x4& m, int a, int b, int c, int d, int e, int f) {
 	float resultNum;
 	resultNum = m.m[a - 1][b - 1] * m.m[c - 1][d - 1] * m.m[e - 1][f - 1];
 	return resultNum;
@@ -151,11 +151,11 @@ Matrix4x4 MakeIdentity4x4() {
 	resultIdentity.m[3][1] = 0.0f;
 	resultIdentity.m[3][2] = 0.0f;
 	resultIdentity.m[3][3] = 1.0f;
+
+	return resultIdentity;
 }
 
 void MatrixScreenPrint(int x, int y, Matrix4x4& m) {
-	static const int kRowHeight = 20;
-	static const int kCokumnWidth = 60;
 	
 	for (int row = 0; row < 4; ++row) {
 		for (int column = 0; column < 4; ++column) {
