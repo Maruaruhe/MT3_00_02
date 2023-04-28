@@ -1,5 +1,6 @@
 ﻿#include <Novice.h>
 #include "Vec3.h"
+#include "Matrix.h"
 
 const char kWindowTitle[] = "学籍番号";
 
